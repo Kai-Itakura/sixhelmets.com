@@ -1,0 +1,271 @@
+@use "mixin" as mixin;
+@use "variable" as variable;
+@include mixin.fontFace;
+
+.sectionTop_backgroundImage {
+    @include mixin.bi(url(/assets/image/top01.jpg));
+    position: relative;
+    transition: .5s ease-in-out;
+
+    @include mixin.mq(sp) {
+        height: 500px;
+    }
+
+    p {
+        margin: 0 auto;
+        width: 40%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+/* 
+        @include mixin.mq(sp) {
+            top: 50%;
+        } */
+    }
+}
+
+.sectionTop_backgroundImage_filter {
+    @include mixin.blackFilter(.4);
+}
+
+.sectionTop {
+    h2 {
+        font-family: variable.$accentFont;
+        font-size: 6rem;
+        margin-top: 60px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        @include mixin.easeShow($y: 100%);
+
+        @include mixin.mq(sp) {
+            font-size: 2.4rem;
+            margin-top: 60px;
+            padding: 0 24px;
+        }
+
+        &+p {
+            @include mixin.easeShow($y: 100%);
+        }
+    }
+
+    p {
+        margin-bottom: 60px;
+
+        @include mixin.mq(sp) {
+            margin-bottom: 20px;
+            padding: 0 24px;
+        }
+
+        br {
+            @include mixin.mq(sp) {
+                display: none;
+            }
+        }
+
+    }
+
+    a {
+        display: inline-block;
+        font-family: variable.$accentFont;
+        font-size: 2rem;
+        color: #333;
+        @include mixin.easeShow($y: 200%);
+        transition-property: transform;
+
+        @include mixin.mq(sp) {
+            font-size: 1.4em;
+        }
+
+        &:hover {
+            color: variable.$cyanColor;
+            opacity: 1;
+        }
+    }
+}
+
+.sectionBrands {
+    padding: 150px 140px;
+
+    @include mixin.mq(sp) {
+        padding: 80px 24px 60px;
+    }
+
+    .hoverScale {
+        width: 100%;
+        height: 30vw;
+        margin-bottom: 100px;
+        overflow: hidden;
+        @include mixin.easeShow($y: 50%);
+
+        @include mixin.mq(sp) {
+            margin-bottom: 20px;
+        }
+
+        a:hover {
+            opacity: 1;
+        }
+
+        .shc_backgroundImage {
+            @include mixin.bi(url(/assets/image/sixhelmetsChoppers_linkBackground.jpeg));
+            height: 100%;
+            transition-duration: .3s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
+            h2 {
+                max-width: 770px;
+                margin: 0 auto;
+            }
+        }
+
+        .vtg_backgroundImage {
+            @include mixin.bi(url(/assets/image/vintage_link_background.jpg));
+            height: 100%;
+            background-position: 50% 30%;
+            transition-duration: .3s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
+            h2 {
+                font-family: 'fo';
+                @include mixin.fzVw(120);
+                text-transform: uppercase;
+                color: #f6f8f9;
+            }
+        }
+
+        .tgo_backgroundImage {
+            @include mixin.bi(url(/assets/image/top-denim.jpg));
+            height: 100%;
+            transition-duration: .3s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
+            h2 {
+                margin: 0 auto;
+                max-width: 500px;
+            }
+        }
+
+        .me_backgroundImage {
+            @include mixin.bi(url(/assets/image/motiveEquipped_background.jpeg));
+            height: 100%;
+            transition-duration: .3s;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
+            h2 {
+                margin: 0 auto;
+                max-width: 770px;
+                padding: 0 20px;
+            }
+        }
+
+        .sectionBrands_backgroundImage_filter {
+            @include mixin.blackFilter;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20%;
+
+            &:hover {
+                @include mixin.blackFilter(0);
+                transition-duration: .3s;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+/* 
+.sectionInstagram {
+    padding: 0 140px 300px;
+
+    @include mixin.mq(sp) {
+        padding: 0 24px 80px;
+    }
+
+    h2 {
+        font-family: 'fo';
+        font-size: 6rem;
+        text-transform: capitalize;
+        @include mixin.easeShow($y: 100%);
+
+        @include mixin.mq(sp) {
+            font-size: 2.4rem;
+        }
+
+        &::before {
+            content: url(/assets/image/instagram_icon_black.svg);
+            display: inline-block;
+            width: 45px;
+            margin-right: 20px;
+
+            @include mixin.mq(sp) {
+                width: 30px;
+                position: relative;
+                margin: 0;
+                top: 4px;
+                right: 10px;
+
+            }
+        }
+    }
+} */
+
+.sectionShopAtmosphere {
+    padding: 0 140px 200px;
+
+    @include mixin.mq(sp) {
+        padding: 0 24px 40px;
+    }
+
+    div {
+        width: 100%;
+        margin-bottom: 150px;
+        @include mixin.easeShow;
+
+        @include mixin.mq(sp) {
+            margin-bottom: 40px;
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    h2 {
+        font-family: variable.$accentFont;
+        font-size: 6rem;
+        text-transform: uppercase;
+        @include mixin.easeShow($y: 100%);
+
+        @include mixin.mq(sp) {
+            font-size: 2.4rem;
+        }
+    }
+
+    p {
+        font-style: normal;
+        font-size: 3rem;
+        @include mixin.easeShow($y: 100%);
+
+        @include mixin.mq(sp) {
+            font-size: 1.4rem;
+            text-align: center;
+        }
+    }
+}

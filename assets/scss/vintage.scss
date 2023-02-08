@@ -1,0 +1,312 @@
+@use "variable" as var;
+@use "mixin" as mix;
+@include mix.fontFace;
+
+body {
+    background-color: #000;
+    color: #f6f8f9;
+}
+
+.buy-button {
+    @include mix.buyButton;
+    margin: 20px 0 0 50%;
+    @include mix.easeShow($y: 300%);
+
+    @include mix.mq(sp) {
+        font-size: 1.6rem;
+        margin-top: 10px;
+
+        &::after {
+            width: 50px;
+        }
+    }
+}
+
+.backgroundLogo.show {
+    opacity: 1;
+}
+
+.backgroundLogo img {
+    width: 65%;
+}
+
+.section-top__background-image {
+    @include mix.bi(url(/assets/image/vintage_link_background.jpg));
+    background-position: 50% 0;
+
+    @include mix.mq(sp) {
+        height: 500px;
+    }
+
+    &__filter {
+        @include mix.blackFilter(.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            @include mix.fzVw(170);
+            text-transform: uppercase;
+            color: #f6f8f9;
+            font-family: fo;
+            font-weight: 400;
+            @include mix.easeShow;
+            transform: scale(2, 2);
+            transition-delay: .5s;
+        }
+    }
+}
+
+.top-image__container {
+    display: flex;
+    justify-content: center;
+
+    div {
+        @include mix.easeShow;
+        z-index: 1;
+
+        &:last-child {
+            transition-delay: .2s;
+        }
+    }
+
+    img {
+        width: 50vw;
+        height: 100%;
+        object-fit: cover;
+        object-position: 0 0;
+
+        @include mix.mq(sp) {
+            height: 100%;
+        }
+    }
+}
+
+.section-items {
+    padding: 100px 140px 200px;
+
+    @include mix.mq(sp) {
+        padding: 0 24px 80px;
+    }
+
+    h2 {
+        font-family: "fo";
+        font-size: 10rem;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: var.$yellow;
+        @include mix.easeShow($y: 100%);
+
+        &+p {
+            @include mix.easeShow($y: 100%);
+        }
+
+        @include mix.mq(sp) {
+            font-size: 3rem;
+            margin: 60px 0 20px;
+
+            &+p br {
+                display: none;
+            }
+        }
+    }
+
+    ul {
+        padding: 200px 0 0;
+
+        @include mix.mq(sp) {
+            padding-top: 80px;
+        }
+
+        li {
+            margin-bottom: 200px;
+
+            @include mix.mq(sp) {
+                margin-bottom: 80px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            p {
+                @include mix.easeShow($y: 100%);
+
+                br {
+                    @include mix.mq(sp) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .jacket div {
+            width: 46vw;
+            height: 35vw;
+            margin: 0 auto 100px;
+            @include mix.easeShow;
+            transform: scale(0, 0);
+
+            @include mix.mq(sp) {
+                margin-bottom: 40px;
+                width: 50vw;
+                height: 40vw;
+            }
+        }
+
+        .harley {
+            &__flex-container {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 100px;
+
+                @include mix.mq(sp) {
+                    margin-bottom: 40px;
+                }
+
+                div:first-child {
+                    width: 25vw;
+                    height: 30vw;
+                    margin-right: 4vw;
+                    @include mix.easeShow($x: -100%);
+
+                    @include mix.mq(sp) {
+                        width: 30vw;
+                        height: 35vw;
+                    }
+
+                    img {
+                        object-position: 100%;
+                    }
+                }
+
+                div:last-child {
+                    width: 25vw;
+                    height: 17vw;
+                    align-self: center;
+                    margin-left: 4vw;
+                    @include mix.easeShow($x: 100%);
+
+                    @include mix.mq(sp) {
+                        width: 30vw;
+                        height: 22vw;
+                    }
+                }
+            }
+        }
+
+        .t-shirts {
+            div {
+                width: 25vw;
+                height: 33vw;
+                margin: 0 auto 100px;
+                @include mix.easeShow;
+                transform: scale(0, 0);
+
+                @include mix.mq(sp){
+                    margin-bottom: 40px;
+                    width: 30vw;
+                    height: 38vw;
+                }
+            }
+        }
+
+
+        .military {
+            div {
+                width: 46vw;
+                height: 35vw;
+                margin: 0 auto 100px;
+                @include mix.easeShow;
+                transform: scale(0, 0);
+
+                @include mix.mq(sp){
+                    margin-bottom: 40px;
+                    width: 51vw;
+                    height: 40vw;
+                }
+            }
+        }
+
+        .eyewear {
+            &__flex-container {
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                margin-bottom: 100px;
+
+                @include mix.mq(sp){
+                    margin-bottom: 40px;
+                }
+
+                div {
+                    width: 28vw;
+                    height: 21vw;
+                    @include mix.easeShow($x: -100%);
+                    @include mix.mq(sp) {
+                        width: 33vw;
+                        height: 26vw;
+                    }
+
+                    &:last-child {
+                        margin: 0 0 15vw -5vw;
+                        z-index: 2;
+                        @include mix.easeShow($x: 100%);
+                    }
+                }
+            }
+        }
+
+        .brand {
+            div {
+                width: 26vw;
+                height: 35vw;
+                margin: 0 auto 80px;
+                @include mix.easeShow;
+                transform: scale(0, 0);
+                @include mix.mq(sp){
+                    margin-bottom: 35px;
+                    width: 31vw;
+                    height: 40vw;
+                }
+            }
+
+            h3 {
+                text-transform: uppercase;
+                font-family: var.$accentFont;
+                margin-bottom: 20px;
+                font-size: 2.4rem;
+                @include mix.easeShow($y: 100%);
+
+                @include mix.mq(sp){
+                    margin-bottom: 10px;
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
+
+.section-atmosphere {
+    padding: 0 140px 200px;
+
+    @include mix.mq(sp) {
+        padding: 0 24px 80px;
+    }
+
+    div {
+        width: 100%;
+        @include mix.easeShow;
+
+        img {
+            width: 100%;
+        }
+    }
+}

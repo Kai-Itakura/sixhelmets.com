@@ -1,0 +1,304 @@
+@font-face {
+  font-family: "fo";
+  src: url(/assets/font/FjallaOne-Regular.ttf) format("truetype");
+}
+.sectionTop_backgroundImage {
+  background-image: url(/assets/image/top01.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+@media screen and (max-width: 767px) {
+  .sectionTop_backgroundImage {
+    height: 500px;
+  }
+}
+.sectionTop_backgroundImage p {
+  margin: 0 auto;
+  width: 40%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 
+          @include mixin.mq(sp) {
+              top: 50%;
+          } */
+}
+
+.sectionTop_backgroundImage_filter {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+}
+
+.sectionTop h2 {
+  font-family: "Arial Black", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 6rem;
+  margin-top: 60px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 100%);
+  transition: all 1s ease;
+}
+@media screen and (max-width: 767px) {
+  .sectionTop h2 {
+    font-size: 2.4rem;
+    margin-top: 60px;
+    padding: 0 24px;
+  }
+}
+.sectionTop h2 + p {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 100%);
+  transition: all 1s ease;
+}
+.sectionTop p {
+  margin-bottom: 60px;
+}
+@media screen and (max-width: 767px) {
+  .sectionTop p {
+    margin-bottom: 20px;
+    padding: 0 24px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .sectionTop p br {
+    display: none;
+  }
+}
+.sectionTop a {
+  display: inline-block;
+  font-family: "Arial Black", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 2rem;
+  color: #333;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 200%);
+  transition: all 1s ease;
+  transition-property: transform;
+}
+@media screen and (max-width: 767px) {
+  .sectionTop a {
+    font-size: 1.4em;
+  }
+}
+.sectionTop a:hover {
+  color: #25A4C2;
+  opacity: 1;
+}
+
+.sectionBrands {
+  padding: 150px 140px;
+}
+@media screen and (max-width: 767px) {
+  .sectionBrands {
+    padding: 80px 24px 60px;
+  }
+}
+.sectionBrands .hoverScale {
+  width: 100%;
+  height: 30vw;
+  margin-bottom: 100px;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 50%);
+  transition: all 1s ease;
+}
+@media screen and (max-width: 767px) {
+  .sectionBrands .hoverScale {
+    margin-bottom: 20px;
+  }
+}
+.sectionBrands .hoverScale a:hover {
+  opacity: 1;
+}
+.sectionBrands .hoverScale .shc_backgroundImage {
+  background-image: url(/assets/image/sixhelmetsChoppers_linkBackground.jpeg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  transition-duration: 0.3s;
+}
+.sectionBrands .hoverScale .shc_backgroundImage:hover {
+  transform: scale(1.2);
+}
+.sectionBrands .hoverScale .shc_backgroundImage h2 {
+  max-width: 770px;
+  margin: 0 auto;
+}
+.sectionBrands .hoverScale .vtg_backgroundImage {
+  background-image: url(/assets/image/vintage_link_background.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  background-position: 50% 30%;
+  transition-duration: 0.3s;
+}
+.sectionBrands .hoverScale .vtg_backgroundImage:hover {
+  transform: scale(1.2);
+}
+.sectionBrands .hoverScale .vtg_backgroundImage h2 {
+  font-family: "fo";
+  font-size: 120px;
+  font-size: 8.3333333333vw;
+  text-transform: uppercase;
+  color: #f6f8f9;
+}
+.sectionBrands .hoverScale .tgo_backgroundImage {
+  background-image: url(/assets/image/top-denim.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  transition-duration: 0.3s;
+}
+.sectionBrands .hoverScale .tgo_backgroundImage:hover {
+  transform: scale(1.2);
+}
+.sectionBrands .hoverScale .tgo_backgroundImage h2 {
+  margin: 0 auto;
+  max-width: 500px;
+}
+.sectionBrands .hoverScale .me_backgroundImage {
+  background-image: url(/assets/image/motiveEquipped_background.jpeg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  transition-duration: 0.3s;
+}
+.sectionBrands .hoverScale .me_backgroundImage:hover {
+  transform: scale(1.2);
+}
+.sectionBrands .hoverScale .me_backgroundImage h2 {
+  margin: 0 auto;
+  max-width: 770px;
+  padding: 0 20px;
+}
+.sectionBrands .hoverScale .sectionBrands_backgroundImage_filter {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20%;
+}
+.sectionBrands .hoverScale .sectionBrands_backgroundImage_filter:hover {
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 100%;
+  transition-duration: 0.3s;
+}
+.sectionBrands .hoverScale img {
+  width: 100%;
+}
+
+/* 
+.sectionInstagram {
+    padding: 0 140px 300px;
+
+    @include mixin.mq(sp) {
+        padding: 0 24px 80px;
+    }
+
+    h2 {
+        font-family: 'fo';
+        font-size: 6rem;
+        text-transform: capitalize;
+        @include mixin.easeShow($y: 100%);
+
+        @include mixin.mq(sp) {
+            font-size: 2.4rem;
+        }
+
+        &::before {
+            content: url(/assets/image/instagram_icon_black.svg);
+            display: inline-block;
+            width: 45px;
+            margin-right: 20px;
+
+            @include mixin.mq(sp) {
+                width: 30px;
+                position: relative;
+                margin: 0;
+                top: 4px;
+                right: 10px;
+
+            }
+        }
+    }
+} */
+.sectionShopAtmosphere {
+  padding: 0 140px 200px;
+}
+@media screen and (max-width: 767px) {
+  .sectionShopAtmosphere {
+    padding: 0 24px 40px;
+  }
+}
+.sectionShopAtmosphere div {
+  width: 100%;
+  margin-bottom: 150px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0);
+  transition: all 1s ease;
+}
+@media screen and (max-width: 767px) {
+  .sectionShopAtmosphere div {
+    margin-bottom: 40px;
+  }
+}
+.sectionShopAtmosphere div img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.sectionShopAtmosphere h2 {
+  font-family: "Arial Black", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  font-size: 6rem;
+  text-transform: uppercase;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 100%);
+  transition: all 1s ease;
+}
+@media screen and (max-width: 767px) {
+  .sectionShopAtmosphere h2 {
+    font-size: 2.4rem;
+  }
+}
+.sectionShopAtmosphere p {
+  font-style: normal;
+  font-size: 3rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 100%);
+  transition: all 1s ease;
+}
+@media screen and (max-width: 767px) {
+  .sectionShopAtmosphere p {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+}

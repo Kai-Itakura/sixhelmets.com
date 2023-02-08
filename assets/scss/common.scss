@@ -1,0 +1,550 @@
+@use "variable" as variable;
+@use "mixin" as mixin;
+
+html {
+    font-size: 62.5%;
+    /* 16px * 62.5% = 10px */
+    width: 100%;
+}
+
+body {
+    color: #333;
+    /* RGB */
+    font-family: 'Arial',  "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 2.4;
+    text-align: center;
+    background-color: #f6f8f9;
+
+    @include mixin.mq(sp) {
+        font-size: 1.2rem;
+        
+        p {
+            text-align: left;
+        }
+    }
+}
+
+main {
+    overflow: hidden;
+}
+
+a:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+//ハンバーガーメニュー
+.active {
+    overflow: hidden;
+
+    .header {
+        background-color: rgb(255, 255, 255, 0);
+
+        .hamburger span {
+            &:first-child {
+                transform: rotate(45deg);
+                top: 12.5px;
+                background-color: #f6f8f9;
+            }
+
+            &:last-child {
+                transform: rotate(-45deg);
+                top: 12.5px;
+                background-color: #f6f8f9;
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+        }
+
+        .headerLink_container li:first-child a {
+            color: #f6f8f9;
+
+            &::after {
+                content: url(/assets/image/onlineShop_arrow_white.svg);
+            }
+        }
+
+        .globalMenu {
+            top: 0;
+        }
+    }
+}
+
+// ヘッダー
+.header {
+    height: 95px;
+    width: 100%;
+    background-color: rgb(255, 255, 255, .8);
+    position: fixed;
+    z-index: 900;
+    transition: .3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+
+    @include mixin.mq(sp) {
+        height: 50px;
+    }
+
+    .hamburger {
+        width: 55px;
+        height: 30px;
+        position: absolute;
+        top: 35px;
+        left: 30px;
+        cursor: pointer;
+        z-index: 900;
+
+        @include mixin.mq(sp) {
+            width: 40px;
+            top: 15px;
+            left: 12px;
+        }
+
+        &:hover {
+            opacity: .5;
+        }
+
+        span {
+            background-color: variable.$accentColor;
+            height: 5px;
+            width: 55px;
+            position: absolute;
+            top: 12.5px;
+            left: 0;
+            transition: .3s ease-in-out;
+
+            @include mixin.mq(sp) {
+                width: 40px;
+                height: 3px;
+                top: 10px;
+            }
+
+            &:first-child {
+                top: 0px;
+            }
+
+            &:last-child {
+                top: 25px;
+
+                @include mixin.mq(sp) {
+                    top: 20px;
+                }
+            }
+        }
+    }
+
+    .topLogo {
+        width: 135px;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 900;
+
+        @include mixin.mq(sp) {
+            width: 80px;
+            top: 53%;
+        }
+    }
+
+    .globalMenu {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: -120%;
+        transition: 0.3s ease-in-out;
+        text-align: center;
+    }
+
+    .nav_backgroundImage {
+        @include mixin.bi;
+
+        .nav_backgroundImage_filter {
+            @include mixin.blackFilter;
+
+            ul {
+                width: 100%;
+                height: 100%;
+                padding-top: 130px;
+
+                li {
+                    @include mixin.fzVw(40);
+                    font-family: variable.$accentFont;
+                    height: 16%;
+
+                    @include mixin.mq(sp) {
+                        font-size: 20px;
+                    }
+
+                    a {
+                        color: #f6f8f9;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    .headerLink_container {
+        position: absolute;
+        top: 30px;
+        right: 30PX;
+        display: flex;
+
+        @include mixin.mq(sp) {
+            top: 10px;
+            right: 10px;
+        }
+
+        li:first-child {
+            margin-right: 45px;
+            font-family: variable.$accentFont;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 2rem;
+
+            @include mixin.mq(sp) {
+                font-size: 1rem;
+                margin-right: 10px;
+                margin-top: 3px;
+            }
+
+            a {
+                color: variable.$accentColor;
+                position: relative;
+
+                &::after {
+                    content: url(/assets/image/onlineShop_arrow.svg);
+                    width: 180px;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: -25px;
+
+                    @include mixin.mq(sp) {
+                        width: 85px;
+                        right: -8px;
+                    }
+                }
+
+                &:hover {
+                    color: variable.$cyanColor;
+                    opacity: 1;
+
+                    &::after {
+                        content: url(/assets/image/onlineShop_arrow_cyan.svg);
+                    }
+                }
+            }
+        }
+
+        li:last-child img {
+            padding-top: 3px;
+
+            @include mixin.mq(sp) {
+                width: 20px;
+                vertical-align: top;
+                padding-top: 6px;
+            }
+        }
+    }
+}
+
+// フッター
+.footer_backgroundImage {
+    @include mixin.bi(url(/assets/image/footer_backgroundImage.jpeg));
+    height: 100%;
+
+    .footer_backgroundImage_filter {
+        @include mixin.blackFilter;
+
+        @include mixin.mq(sp) {
+            padding: 0 40px;
+        }
+    }
+
+    .footer_flexContainer {
+        display: flex;
+
+        @include mixin.mq(sp) {
+            display: block;
+        }
+
+        .footer_nav_container {
+            padding: 70px 0 0 100px;
+            width: 60%;
+
+            @include mixin.mq(sp) {
+                width: 100%;
+                padding: 0;
+            }
+
+            h2 {
+                width: 100%;
+
+                @include mixin.mq(sp) {
+                    margin: 40px auto 0;
+                    display: inline-block;
+                }
+
+                img {
+                    width: 100%;
+                    max-width: 720px;
+                }
+            }
+
+            nav {
+                text-align: left;
+                padding-top: 80px;
+
+                @include mixin.mq(sp) {
+                    padding-top: 40px;
+                }
+
+                ul {
+                    width: 200px;
+                    margin-right: 0;
+                    margin-left: auto;
+
+                    @include mixin.mq(sp) {
+                        margin: 0;
+                    }
+                }
+
+                li {
+                    text-transform: uppercase;
+                    margin-bottom: 40px;
+
+                    @include mixin.mq(sp) {
+                        margin-bottom: 10px;
+                    }
+
+                    a {
+                        color: #f6f8f9;
+                    }
+                }
+            }
+        }
+
+        .footerLink_wrapper {
+            display: flex;
+            margin-right: 140px;
+            margin-bottom: 40px;
+            margin-left: auto;
+            align-items: flex-end;
+
+            @include mixin.mq(sp) {
+                margin-top: 15px;
+                margin-bottom: 20px;
+            }
+
+            li:first-child {
+                margin-right: 45px;
+                font-family: variable.$accentFont;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 2rem;
+                min-width: 160px;
+
+                @include mixin.mq(sp) {
+                    font-size: 1.2rem;
+                    text-align: left;
+                    margin-right: 30px;
+                    min-width: auto;
+                }
+
+                a {
+                    position: relative;
+                    color: #f6f8f9;
+                    white-space: nowrap;
+
+                    &::after {
+                        content: url(/assets/image/onlineShop_arrow_white.svg);
+                        width: 180px;
+                        display: block;
+                        position: absolute;
+                        top: 0;
+
+                        @include mixin.mq(sp) {
+                            width: 105px;
+                            left: 0;
+                        }
+                    }
+
+                    &:hover {
+                        color: variable.$cyanColor;
+                        opacity: 1;
+
+                        &::after {
+                            content: url(/assets/image/onlineShop_arrow_cyan.svg);
+                        }
+                    }
+                }
+            }
+
+            img {
+                width: 30px;
+                margin-bottom: 3px;
+
+                @include mixin.mq(sp) {
+                    width: 25px;
+                    margin-bottom: 2px;
+                }
+            }
+        }
+    }
+}
+
+small {
+    display: block;
+    color: #f6f8f9;
+    text-align: right;
+    margin-right: 140px;
+    padding-bottom: 30px;
+
+    @include mixin.mq(sp) {
+        text-align: left;
+        margin-right: 0;
+        padding-bottom: 0;
+    }
+}
+
+//背景ロゴ
+.backgroundLogo {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s ease-in-out;
+    z-index: -1;
+
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+//スクロールトップボタン
+.topButton {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #f6f8f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+
+    @include mixin.mq(sp) {
+        bottom: 10px;
+        right: 5px;
+        width: 40px;
+        height: 40px;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 22px;
+        border-top: 3px solid variable.$accentColor;
+        border-right: 3px solid variable.$accentColor;
+        transform: rotate(-45deg);
+        margin-bottom: -15px;
+
+        @include mixin.mq(sp) {
+            width: 15px;
+            height: 15px;
+            margin-bottom: -10px;
+        }
+    }
+
+    &:hover {
+        &::before {
+            opacity: .5;
+        }
+    }
+}
+
+//オンラインショップボタン
+.onlineShopButton {
+    position: fixed;
+    bottom: 120px;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    font-family: variable.$accentFont;
+    font-size: 2rem;
+    transition: .3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    @include mixin.mq(sp) {
+        display: none;
+    }
+
+    a {
+        color: variable.$accentColor;
+
+        &::after {
+            content: url(/assets/image/onlineShop_arrow.svg);
+            width: 180px;
+            display: block;
+            position: absolute;
+            top: 10px;
+        }
+
+        &:hover {
+            color: variable.$cyanColor;
+            opacity: 1;
+
+            &::after {
+                content: url(/assets/image/onlineShop_arrow_cyan.svg);
+            }
+        }
+    }
+}
+
+//画面の高さによって表示、非表示
+.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.backgroundLogo.show {
+    opacity: .2;
+}
+
+.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+//スクロールするとふわっと表示
+.ease-show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}

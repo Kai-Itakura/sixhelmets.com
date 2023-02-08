@@ -1,0 +1,33 @@
+<svg id="instagram" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #956134;
+      }
+
+      .cls-1 {
+        stroke-width: 4px;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="長方形_15" data-name="長方形 15" class="cls-1">
+    <rect class="cls-3" width="40" height="40" rx="10"/>
+    <rect class="cls-4" x="2" y="2" width="36" height="36" rx="8"/>
+  </g>
+  <g id="楕円形_1" data-name="楕円形 1" class="cls-1" transform="translate(10 10)">
+    <circle class="cls-3" cx="10.5" cy="10.5" r="10.5"/>
+    <circle class="cls-4" cx="10.5" cy="10.5" r="8.5"/>
+  </g>
+  <g id="楕円形_2" data-name="楕円形 2" class="cls-2" transform="translate(28 7)">
+    <circle class="cls-3" cx="2.5" cy="2.5" r="2.5"/>
+    <circle class="cls-4" cx="2.5" cy="2.5" r="2"/>
+  </g>
+</svg>

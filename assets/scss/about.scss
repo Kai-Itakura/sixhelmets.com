@@ -1,0 +1,314 @@
+@use "variable" as var;
+@use "mixin" as mix;
+@include mix.fontFace;
+
+.sectionTop_backgroundImage {
+    @include mix.bi(url(/assets/image/about_topImage.jpeg));
+
+    @include mix.mq(sp) {
+        height: 500px;
+    }
+
+    .sectionTop_backgroundImage_filter {
+        @include mix.blackFilter;
+        position: relative;
+
+        .title_container {
+            position: absolute;
+            top: 48%;
+            right: 10%;
+            color: #fff;
+            text-align: right;
+            @include mix.easeShow;
+            transform: scale(2, 2);
+            transition-property: transform, opacity;
+            transition-delay: .5s;
+
+            @include mix.mq(sp) {
+                text-align: left;
+                left: 10%;
+                right: auto;
+                margin-right: 10%;
+            }
+
+            h2 {
+                text-transform: uppercase;
+                font-family: 'fo';
+                font-size: 100px;
+                font-weight: 400;
+                padding-right: 90px;
+
+                @include mix.mq(sp) {
+                    font-size: 3rem;
+                    padding-right: 10px;
+                }
+            }
+
+            p {
+                margin-top: -50px;
+
+                @include mix.mq(sp) {
+                    margin-top: -20px;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.sectionTop {
+    .sectionTop__top-lead--container {
+        padding: 0 140px 300px;
+
+        @include mix.mq(sp) {
+            padding: 0 24px 80px;
+        }
+
+        h2 {
+            font-family: var.$accentFont;
+            font-size: 6rem;
+            margin-top: 60px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            @include mix.easeShow($y: 100%);
+
+            @include mix.mq(sp) {
+                font-size: 2.4rem;
+            }
+        }
+
+        .sectionTop__top-lead {
+            margin-bottom: 100px;
+            @include mix.easeShow($y: 100%);
+
+            br {
+                @include mix.mq(sp) {
+                    display: none;
+                }
+            }
+
+        }
+
+        .sectionTop__shop-image {
+            max-width: 500px;
+            margin: 0 auto 100px;
+            @include mix.easeShow;
+
+            @include mix.mq(sp) {
+                margin-bottom: 40px;
+                width: 70%;
+            }
+
+            img {
+                width: 100%;
+
+                @include mix.mq(sp) {
+                    aspect-ratio: 3/4;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+
+        .sectionTop__lead--1 {
+            margin-bottom: 150px;
+            @include mix.easeShow($y: 100%);
+
+            @include mix.mq(sp) {
+                margin-bottom: 80px;
+            }
+        }
+
+        .shopAtmosphere_container {
+            display: flex;
+            margin: 0 auto;
+            justify-content: space-around;
+            align-items: flex-end;
+            margin-bottom: 20vw;
+
+            &+p {
+                @include mix.easeShow($y: 100%);
+
+                br {
+                    @include mix.mq(sp) {
+                        display: none;
+                    }
+                }
+            }
+
+            @include mix.mq(sp) {
+                margin-bottom: 25%;
+                padding: 0 24px;
+            }
+
+            div:first-child {
+                width: 35vw;
+                margin-right: 20px;
+                @include mix.easeShow($x: -100%);
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            div:last-child {
+                width: 25vw;
+                margin-bottom: -20%;
+                @include mix.easeShow($x: 100%);
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.sectionPrologue {
+    background-color: #000;
+    padding: 70px 140px 200px;
+    color: #f6f8f9;
+
+    @include mix.mq(sp) {
+        padding: 40px 24px 80px;
+    }
+
+    h2 {
+        font-family: "fo";
+        font-size: 10rem;
+        text-transform: uppercase;
+        color: var.$yellow;
+        font-weight: 400;
+        margin-bottom: 70px;
+        @include mix.easeShow($y: 100%);
+
+        @include mix.mq(sp) {
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+    }
+
+    .sectionPrologue__top-image {
+        width: 30vw;
+        margin: 0 auto 100px;
+        @include mix.easeShow($y: 50%);
+
+        @include mix.mq(sp) {
+            margin-bottom: 40px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        &+p {
+            @include mix.easeShow($y: 100%);
+        }
+    }
+
+    .usaImage_container {
+        margin-top: 200px;
+        display: flex;
+        justify-content: center;
+
+        @include mix.mq(sp) {
+            margin-top: 80px;
+        }
+
+        div:first-child {
+            width: 45vw;
+            position: relative;
+            z-index: 2;
+            @include mix.easeShow($x: -100%);
+
+            img {
+                width: 100%;
+            }
+        }
+
+        div:nth-child(2) {
+            width: 28vw;
+            margin-left: -5vw;
+            margin-top: 23vw;
+            @include mix.easeShow($x: 100%);
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .usaImage--center {
+        width: 25vw;
+        margin: -20vw 15% 70px;
+        @include mix.easeShow($y: 100%);
+
+        @include mix.mq(sp) {
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .usaImage_container--2 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 150px;
+
+        @include mix.mq(sp) {
+            margin-bottom: 40px;
+        }
+
+        div:first-child {
+            width: 45vw;
+            margin-top: 10vw;
+            @include mix.easeShow($x: -100%);
+
+            img {
+                width: 100%;
+            }
+        }
+
+        div:last-child {
+            width: 40vw;
+            margin-left: -5vw;
+            z-index: 2;
+            @include mix.easeShow($x: 100%);
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &+p {
+            @include mix.easeShow($y: 100%);
+        }
+    }
+}
+
+.sectionSwiper {
+    background-color: #000;
+    padding-bottom: 200px;
+
+    @include mix.mq(sp) {
+        padding-bottom: 80px;
+    }
+
+    .infinite-slider {
+        .swiper-wrapper {
+            transition-timing-function: linear;
+        }
+
+        .swiper-slide {
+            height: 40vw !important;
+            width: auto !important;
+            margin: 0 1.4vw;
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+}

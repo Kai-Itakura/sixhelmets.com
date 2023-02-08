@@ -1,0 +1,79 @@
+@use "variable" as var;
+
+@function getVw($size, $viewport: 1440) {
+    $rate: 100 / $viewport;
+    @return $rate * $size * 1vw;
+}
+
+@mixin fzVw($fontSize: 10) {
+    font-size: $fontSize * 1px;
+    font-size: getVw($fontSize);
+}
+
+@mixin bi($backgroundImage: url(/assets/image/menu_background.jpeg)) {
+    background-image: $backgroundImage;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin blackFilter($opacity: .5) {
+    background-color: rgb(0, 0, 0, $opacity);
+    width: 100%;
+    height: 100%;
+}
+
+@mixin fontFace {
+    @font-face {
+        font-family: 'fo';
+        src: url(/assets/font/FjallaOne-Regular.ttf) format('truetype');
+    }
+}
+
+@mixin buyButton {
+    display: inline-block;
+    font-size: 2rem;
+    font-family: var.$accentFont;
+    text-transform: uppercase;
+    color: var.$accentColor;
+    position: relative;
+    transition-property: transform !important;
+
+    &::after {
+        content: url(/assets/image/buy-button_arrow.svg);
+        width: 65px;
+        display: block;
+        position: absolute;
+        top: 10px;
+    }
+
+    &:hover {
+        color: var.$cyanColor;
+        opacity: 1;
+
+        &::after {
+            content: url(/assets/image/buy-button_arrow-cyan.svg);
+        }
+    }
+}
+
+$breakpoint: (
+    sp: 'screen and (max-width: 767px)',
+    tb: 'screen and (min-width: 768px)',
+    pc: 'screen and (min-width: 1025px)'
+);
+
+@mixin mq($bp) {
+    @media #{map-get($breakpoint, $bp)} {
+        @content
+    }
+}
+
+@mixin easeShow($opacity: 0, $visibility: hidden, $x: 0, $y: 0) {
+    opacity: $opacity;
+    visibility: $visibility;
+    transform: translate($x, $y);
+    transition: all 1s ease;
+}

@@ -1,0 +1,380 @@
+@use "variable" as var;
+@use "mixin" as mix;
+@include mix.fontFace;
+
+.buy-button {
+    @include mix.buyButton;
+
+    @include mix.mq(sp) {
+        font-size: 1.6rem;
+
+        &::after {
+            width: 50px;
+        }
+    }
+}
+
+.logo-area {
+    width: 100vw;
+    height: 80vh;
+    position: relative;
+    background-color: #f6f8f9;
+
+    @include mix.mq(sp) {
+        height: 500px;
+    }
+
+    .section-top__logo {
+        width: 50vw;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include mix.mq(sp) {
+            width: 80vw;
+        }
+
+        img {
+            width: 100%;
+            @include mix.easeShow;
+            transform: scale(2, 2);
+            transition-property: transform;
+        }
+    }
+}
+
+.section-top__image--1 {
+    width: 100vw;
+    height: 100vh;
+    @include mix.easeShow;
+
+    @include mix.mq(sp) {
+        height: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 20% 50%;
+    }
+}
+
+.top-image__container {
+    display: flex;
+    justify-content: center;
+
+    div {
+        @include mix.easeShow;
+
+        &:last-child {
+            transition-delay: .2s;
+        }
+    }
+
+    img {
+        width: 50vw;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+        @include mix.mq(sp) {
+            height: 100%;
+        }
+    }
+}
+
+.section-tool {
+    padding: 100px 140px 300px;
+
+    p br {
+        @include mix.mq(sp) {
+            display: none;
+        } 
+    }
+
+    @include mix.mq(sp) {
+        padding: 80px 24px;
+    }
+
+    .title {
+        font-family: "fo";
+        font-size: 10rem;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: var.$cyanColor;
+        @include mix.easeShow($y: 100%);
+
+        &+p {
+            @include mix.easeShow($y: 100%);
+        }
+
+        @include mix.mq(sp) {
+            font-size: 3rem;
+        }
+    }
+
+    .tool-bag__contents {
+        margin-top: 200px;
+        margin: 200px auto 0;
+
+        @include mix.mq(sp) {
+            margin-top: 40px;
+            margin-left: auto;
+        }
+
+        .contents--1__flex {
+            display: flex;
+            width: 100%;
+            margin: 0 auto 100px;
+
+            @include mix.mq(sp) {
+                margin-bottom: 40px;
+            }
+
+            div {
+                width: 50%;
+                height: auto;
+                @include mix.easeShow($y: 50%);
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+
+        h3 {
+            font-size: 2.4rem;
+            text-decoration: underline;
+            margin-bottom: 40px;
+            @include mix.easeShow($y: 100%);
+
+            @include mix.mq(sp) {
+                font-size: 1.6rem;
+                margin-bottom: 20px;
+            }
+        }
+
+        .tool-description--1 {
+            @include mix.easeShow($y: 100%);
+
+            @include mix.mq(sp) {
+                & br {
+                    display: none;
+                }
+            }
+        }
+
+        .tool-description--2 {
+            @include mix.easeShow($y: 100%);
+        }
+
+        .contents--2__flex {
+            display: flex;
+            margin-top: 200px;
+            width: 100%;
+            margin-bottom: 100px;
+            @include mix.easeShow($y: 50%);
+
+            @include mix.mq(sp) {
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+
+            div {
+                width: calc(100% / 3);
+                height: auto;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+
+        .tool-description--3 {
+            @include mix.easeShow($y: 100%);
+        }
+
+        .contents--3 {
+            margin-top: 200px;
+            margin-bottom: 100px;
+            width: 100%;
+
+            @include mix.mq(sp) {
+                margin: 40px 0;
+            }
+
+            div {
+                width: 60%;
+                max-width: 500px;
+                height: auto;
+                @include mix.easeShow($y: 50%);
+
+                &:last-child {
+                    margin: -25% 0 0 auto;
+                    @include mix.easeShow($y: 50%);
+                    z-index: 2;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        .tool-description--4 {
+            @include mix.easeShow($y: 100%);
+        }
+    }
+}
+
+.section-item {
+    padding: 0 140px 200px;
+
+    @include mix.mq(sp) {
+        padding: 0 24px 60px;
+    }
+
+    .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 200px;
+
+        @include mix.mq(sp) {
+            margin-bottom: 60px;
+            display: block;
+            
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .swiper-area {
+            width: 60%;
+            margin: 0 auto;
+            height: 60%;
+            max-width: 475px;
+            max-height: 500px;
+            position: relative;
+            padding: 0 calc(7% + 10px) calc(7% + 10px);
+            @include mix.easeShow($x: -100%);
+
+            @include mix.mq(sp) {
+                width: 100%;
+                @include mix.easeShow($y: 50%);
+            }
+
+
+            .swiper {
+                width: 100%;
+                height: 100%; 
+
+                .swiper-slide img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                @include mix.mq(sp) {
+                    display: none;
+                }
+            }
+
+            .swiper-button-prev::after,
+            .swiper-button-next::after {
+                color: var.$accentColor;
+                font-size: 4vw;
+
+            }
+
+            .swiper-pagination {
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                @include mix.mq(sp) {
+                    bottom: -3%;
+                }
+            }
+
+            .swiper-pagination-bullet {
+                background: var.$accentColor !important;
+            }
+
+        }
+
+        .item-description {
+            align-self: flex-end;
+            height: 500px;
+            width: 40%;
+            min-width: 370px;
+            margin: 0 auto;
+            text-align: left;
+            position: relative;
+            @include mix.easeShow($x: 100%);
+
+            @include mix.mq(sp) {
+                height: auto;
+                width: auto;
+                min-width: 0;
+                margin: 20px 0 0;
+                position: static;
+                @include mix.easeShow($y: 50%);
+            }
+
+            .position-bottom {
+                position: absolute;
+                bottom: 0;
+                margin-bottom: 30px;
+
+                @include mix.mq(sp) {
+                    position: static;
+
+                }
+            }
+
+            p:first-child {
+                font-family: var.$accentFont;
+                font-size: 2.4rem;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+
+                @include mix.mq(sp) {
+                    font-size: 1.6rem;
+                    margin-bottom: 10px;
+                }
+            }
+
+            p:nth-child(2),
+            p:nth-child(3),
+            p:nth-child(4) {
+                margin-bottom: 10px;
+
+                @include mix.mq(sp) {
+                    margin-bottom: 5px;
+                }
+            }
+
+            p:nth-child(5) {
+                display: inline-block;
+                margin-right: 140px;
+                font-family: var.$accentFont;
+            }
+
+        }
+    }
+}

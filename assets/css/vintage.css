@@ -1,0 +1,373 @@
+@font-face {
+  font-family: "fo";
+  src: url(/assets/font/FjallaOne-Regular.ttf) format("truetype");
+}
+body {
+  background-color: #000;
+  color: #f6f8f9;
+}
+
+.buy-button {
+  display: inline-block;
+  font-size: 2rem;
+  font-family: "Arial Black", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  text-transform: uppercase;
+  color: #956134;
+  position: relative;
+  transition-property: transform !important;
+  margin: 20px 0 0 50%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 300%);
+  transition: all 1s ease;
+}
+.buy-button::after {
+  content: url(/assets/image/buy-button_arrow.svg);
+  width: 65px;
+  display: block;
+  position: absolute;
+  top: 10px;
+}
+.buy-button:hover {
+  color: #25A4C2;
+  opacity: 1;
+}
+.buy-button:hover::after {
+  content: url(/assets/image/buy-button_arrow-cyan.svg);
+}
+@media screen and (max-width: 767px) {
+  .buy-button {
+    font-size: 1.6rem;
+    margin-top: 10px;
+  }
+  .buy-button::after {
+    width: 50px;
+  }
+}
+
+.backgroundLogo.show {
+  opacity: 1;
+}
+
+.backgroundLogo img {
+  width: 65%;
+}
+
+.section-top__background-image {
+  background-image: url(/assets/image/vintage_link_background.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: 50% 0;
+}
+@media screen and (max-width: 767px) {
+  .section-top__background-image {
+    height: 500px;
+  }
+}
+.section-top__background-image__filter {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-top__background-image__filter h2 {
+  font-size: 170px;
+  font-size: 11.8055555556vw;
+  text-transform: uppercase;
+  color: #f6f8f9;
+  font-family: fo;
+  font-weight: 400;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0);
+  transition: all 1s ease;
+  transform: scale(2, 2);
+  transition-delay: 0.5s;
+}
+
+.top-image__container {
+  display: flex;
+  justify-content: center;
+}
+.top-image__container div {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0);
+  transition: all 1s ease;
+  z-index: 1;
+}
+.top-image__container div:last-child {
+  transition-delay: 0.2s;
+}
+.top-image__container img {
+  width: 50vw;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 0;
+     object-position: 0 0;
+}
+@media screen and (max-width: 767px) {
+  .top-image__container img {
+    height: 100%;
+  }
+}
+
+.section-items {
+  padding: 100px 140px 200px;
+}
+@media screen and (max-width: 767px) {
+  .section-items {
+    padding: 0 24px 80px;
+  }
+}
+.section-items h2 {
+  font-family: "fo";
+  font-size: 10rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #F0A612;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 100%);
+  transition: all 1s ease;
+}
+.section-items h2 + p {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 100%);
+  transition: all 1s ease;
+}
+@media screen and (max-width: 767px) {
+  .section-items h2 {
+    font-size: 3rem;
+    margin: 60px 0 20px;
+  }
+  .section-items h2 + p br {
+    display: none;
+  }
+}
+.section-items ul {
+  padding: 200px 0 0;
+}
+@media screen and (max-width: 767px) {
+  .section-items ul {
+    padding-top: 80px;
+  }
+}
+.section-items ul li {
+  margin-bottom: 200px;
+}
+@media screen and (max-width: 767px) {
+  .section-items ul li {
+    margin-bottom: 80px;
+  }
+}
+.section-items ul li:last-child {
+  margin-bottom: 0;
+}
+.section-items ul li img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.section-items ul li p {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 100%);
+  transition: all 1s ease;
+}
+@media screen and (max-width: 767px) {
+  .section-items ul li p br {
+    display: none;
+  }
+}
+.section-items ul .jacket div {
+  width: 46vw;
+  height: 35vw;
+  margin: 0 auto 100px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0);
+  transition: all 1s ease;
+  transform: scale(0, 0);
+}
+@media screen and (max-width: 767px) {
+  .section-items ul .jacket div {
+    margin-bottom: 40px;
+    width: 50vw;
+    height: 40vw;
+  }
+}
+.section-items ul .harley__flex-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 767px) {
+  .section-items ul .harley__flex-container {
+    margin-bottom: 40px;
+  }
+}
+.section-items ul .harley__flex-container div:first-child {
+  width: 25vw;
+  height: 30vw;
+  margin-right: 4vw;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-100%, 0);
+  transition: all 1s ease;
+}
+@media screen and (max-width: 767px) {
+  .section-items ul .harley__flex-container div:first-child {
+    width: 30vw;
+    height: 35vw;
+  }
+}
+.section-items ul .harley__flex-container div:first-child img {
+  -o-object-position: 100%;
+     object-position: 100%;
+}
+.section-items ul .harley__flex-container div:last-child {
+  width: 25vw;
+  height: 17vw;
+  align-self: center;
+  margin-left: 4vw;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(100%, 0);
+  transition: all 1s ease;
+}
+@media screen and (max-width: 767px) {
+  .section-items ul .harley__flex-container div:last-child {
+    width: 30vw;
+    height: 22vw;
+  }
+}
+.section-items ul .t-shirts div {
+  width: 25vw;
+  height: 33vw;
+  margin: 0 auto 100px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0);
+  transition: all 1s ease;
+  transform: scale(0, 0);
+}
+@media screen and (max-width: 767px) {
+  .section-items ul .t-shirts div {
+    margin-bottom: 40px;
+    width: 30vw;
+    height: 38vw;
+  }
+}
+.section-items ul .military div {
+  width: 46vw;
+  height: 35vw;
+  margin: 0 auto 100px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0);
+  transition: all 1s ease;
+  transform: scale(0, 0);
+}
+@media screen and (max-width: 767px) {
+  .section-items ul .military div {
+    margin-bottom: 40px;
+    width: 51vw;
+    height: 40vw;
+  }
+}
+.section-items ul .eyewear__flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 767px) {
+  .section-items ul .eyewear__flex-container {
+    margin-bottom: 40px;
+  }
+}
+.section-items ul .eyewear__flex-container div {
+  width: 28vw;
+  height: 21vw;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-100%, 0);
+  transition: all 1s ease;
+}
+@media screen and (max-width: 767px) {
+  .section-items ul .eyewear__flex-container div {
+    width: 33vw;
+    height: 26vw;
+  }
+}
+.section-items ul .eyewear__flex-container div:last-child {
+  margin: 0 0 15vw -5vw;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(100%, 0);
+  transition: all 1s ease;
+}
+.section-items ul .brand div {
+  width: 26vw;
+  height: 35vw;
+  margin: 0 auto 80px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0);
+  transition: all 1s ease;
+  transform: scale(0, 0);
+}
+@media screen and (max-width: 767px) {
+  .section-items ul .brand div {
+    margin-bottom: 35px;
+    width: 31vw;
+    height: 40vw;
+  }
+}
+.section-items ul .brand h3 {
+  text-transform: uppercase;
+  font-family: "Arial Black", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  margin-bottom: 20px;
+  font-size: 2.4rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 100%);
+  transition: all 1s ease;
+}
+@media screen and (max-width: 767px) {
+  .section-items ul .brand h3 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+  }
+}
+
+.section-atmosphere {
+  padding: 0 140px 200px;
+}
+@media screen and (max-width: 767px) {
+  .section-atmosphere {
+    padding: 0 24px 80px;
+  }
+}
+.section-atmosphere div {
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0);
+  transition: all 1s ease;
+}
+.section-atmosphere div img {
+  width: 100%;
+}
